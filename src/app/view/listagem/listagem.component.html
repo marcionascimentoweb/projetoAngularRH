@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<section class="conteudo flex">
+
+    <article class="barra_lateral flex-item-2">
+    </article>
+
+    <article class="topo flex-item-10">
+        <div class="botao_adicionar flex-item-12">
+            <button (click)="adicionar_Indicacoes()" class="bt_adicionar">ADICINAR INDICAÇÕES</button>
+        </div>
+
+        <div class="botoes flex">
+            <div class="bt_conjunto flex-item-10">
+                <button class="bt flex-item-3">
+                    <p class="titulo flex">80</p>
+                    <P class="funcao flex">INDICAÇÕES SEM CORRETOR</P>
+                </button>
+
+                <button class="bt flex-item-3">
+                    <p class="titulo flex">2</p>
+                    <P class="funcao flex">PROPOSTAS FECHADAS</P>
+                </button>
+
+                <button class="bt flex-item-3">
+                    <p class="titulo flex">10</p>
+                    <P class="funcao flex">EM ANDAMENTO</P>
+                </button>
+
+                <button class="bt flex-item-3">
+                    <p class="titulo flex">5</p>
+                    <P class="funcao flex">EM NEGOCIAÇÃO</P>
+                </button>
+            </div>
+        </div>
+
+
+        <article class="listas flex-item-10">
+            
+            <P class="indicacoes">Indicações</P>
+        </article>
+
+        <article class="tabela flex">
+            <table class="table">
+                <thead>
+                    <th scope="col">NOME</th>
+                    <th scope="col">CORRETOR/CORRETORA</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">DETALHES</th>
+                    <th scope="col">DELETAR</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of indicacoes | paginate: { itemsPerPage: 4, currentPage: paginaAtual }; let i = index">
+                    <td>{{item.nome}}</td>
+                    <td>{{item.corretor}}</td>
+                    <td>{{item.status}}</td>
+                    <td class="listas">
+
+                        <button class="bt_detalhe" routerLink="/detalhar/{{item.id}}">
+                            <img class="icon_detalhes" [src]="detalhar">
+                        </button>
+
+                    </td>
+                    <button class="bt_delete" routerLink="/deletar/{{item.id}}">
+                        <img class="icon_delete" [src]="deletar">
+                    </button>
+
+                    </tr>
+                    
+                </tbody>
+                <div class="paginacao">
+                <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+                </div>
+            </table>
+        </article>
+        
+    </article>
+
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,67 @@
+<app-header></app-header>
+
+<section class="cadastrar flex">
+
+    <article class="barra_lateral flex-item-2">
+    </article>
+
+    <article class="topo flex-item-10">
+        
+        <div class="voltar flex">
+            <button class="bt_voltar" (click)="bt_Voltar()">VOLTAR PARA A PÁGINA ANTERIOR</button>
+        </div>
+        
+        <div class="titulo">
+            <p>Cadastro de novas funcionalidade</p>
+        </div>
+
+        <div class="cadastrar_Modal">
+            
+            <div class="dados flex">
+                <p>Dados do cliente</p>
+            </div>
+
+        <div class="formulario">
+            <form class="cadastrar_Indicacoes flex" [formGroup]="indicacoesForm">
+
+                <div class="nome flex-item-6">
+                    <label>Nome Completo</label><br>
+                    <input placeholder="Digite o nome completo do cliente" formControlName="nome" name="nome"><br /><br />
+                </div>
+                
+                <div class="telefone flex-item-6">
+                    <label class="telefone">Telefone</label><br/>
+                    <input placeholder="DDD + Telefone" formControlName="telefone" name="telefone"><br /><br />
+                </div>
+
+                <div class="empresa flex-item-6">
+                    <label>Empresa - opcional</label><br />
+                    <input placeholder="Digite o nome da empresa" formControlName="empresa" name="empresa"><br /><br />
+                </div>
+
+                <div class="email flex-item-6">
+                    <label>E-mail</label><br />
+                    <input placeholder="Ensira aqui o email do cliente" formControlName="email" name="email"><br /><br />
+                </div>
+
+                <div class="corretor flex-item-6">
+                    <label>Corretor</label><br/>
+                    <input placeholder="Digite aqui o nome do corretor" formControlName="corretor" name="corretor"><br /><br />
+                </div>
+
+            </form>
+
+            <div class="bt_formulario flex">
+                <button class="bt_cancelar" (click)="bt_cancelar()">CANCELAR</button>
+                <button class="bt_cadastrar"(click)="cadastrar()">SALVAR E CONTINUAR</button>
+            </div>
+        </div>
+        </div>
+
+
+
+    </article>
+
+</section>
+
+<app-footer></app-footer>
