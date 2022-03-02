@@ -10,10 +10,10 @@ import { IndicacoesService } from 'src/app/service/indicacoes.service';
 })
 export class DetalharComponent implements OnInit {
 
+  public editar = '../../../assets/img/editar.png';
   id : any ;
-  indicacao! : Indicacoes;
-  public indicacoes : Indicacoes[] = [];
-
+  public indicacao! : Indicacoes;
+  
   constructor(
     private indicacaoService : IndicacoesService,
     private route: ActivatedRoute,
@@ -21,20 +21,18 @@ export class DetalharComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.indicacaoService.getIndicacao(this.id).subscribe(res => {
-      this.indicacao = res;
-      alert('indicação achada: ' + this.indicacao.nome);
-      this.bt_cancelar();
-    })
+    this.detalhar();
   }
 
   detalhar(){
-    this._route.navigate(['/detalhar/{{item.id']);
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.indicacaoService.getIndicacaoById(this.id).subscribe(res => {
+      this.indicacao = res;
+      console.log(this.indicacao);
+    })
   }  
   
-
-  bt_cancelar(){
+  bt_Voltar(){
     this._route.navigate(['/']);
   }
 

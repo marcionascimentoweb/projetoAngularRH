@@ -37,9 +37,8 @@ export class IndicacoesService {
   }
 
   //detalhar Indicação
-  getIndicacao(id: any): Observable<Indicacoes>{
-    const _url = `${this.url}/${id}`;
-    return this.http.get<Indicacoes>(_url);
+  getIndicacaoById(id: any): Observable<Indicacoes>{
+    return this.http.get(`${this.url}/${id}`);
 
   }
 }
