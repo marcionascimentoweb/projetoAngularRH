@@ -1,1 +1,68 @@
-<p>deletar works!</p>
+<app-header></app-header>
+
+<section class="detalhar flex">
+
+    <article class="barra_lateral flex-item-2">
+    </article>
+
+    <article class="topo flex-item-10">
+        
+        <div class="voltar flex">
+            <button class="bt_voltar" (click)="bt_Voltar()">VOLTAR PARA A PÁGINA ANTERIOR</button>
+        </div>
+        
+        <div class="titulo">
+            <p>Deseja deletar esta Indicação?</p>
+        </div>
+
+        <div class="exibir flex">
+            
+            <div class="informacoes flex-item-12">
+                <div class="cabecalho flex">
+                    <p class="texto">Informações básicas</p>
+                </div>
+                <div class="conteudo flex-item-12">
+                    <div class="nome flex-item-12">
+                        <label>Nome completo: <br></label>
+                        <strong>{{indicacao.nome}}</strong><br><br>
+                        
+                    </div>
+                    <div class="telefoneEmail flex-item-12">
+                        <div class="telefone flex-item-6">
+                            <label>Telefone: <br></label>
+                                <strong>{{indicacao.telefone}}</strong><br><br>
+                        </div>
+                        <div class="email flex-item-6">
+                            <label>Email: <br></label>
+                                <strong>{{indicacao.email}}</strong><br><br>
+                        </div>
+                    </div>
+
+                    <div class="empresaCorretor flex-item-12">
+                        <div class="empresa flex-item-6">
+                            <label>Empresa: <br></label>
+                                <strong>{{indicacao.empresa}}</strong><br><br>
+                        </div>
+                        <div class="corretor flex-item-6">
+                            <label>Corretor: <br></label>
+                                <strong>{{indicacao.corretor}}</strong><br><br>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+       <div class="botoes flex-item-10">     
+        <button class="bt_deletar" (click)="deletar()">Confirmar</button>
+        <button class="bt_cancelar" (click)="cancelar()">Cancelar</button>
+       </div>
+            
+        </div>    
+
+    </article>
+
+</section>
+
+<app-footer></app-footer>
+
+
