@@ -11,10 +11,12 @@ import { IndicacoesService } from 'src/app/service/indicacoes.service';
 })
 export class CadastrarComponent implements OnInit {
 
+  public confirma = '../../../assets/img/confirma.png';
   public indicacoesForm! : FormGroup;
 
   public indicacao! : Indicacoes; 
   public indicacoes : Indicacoes[] | undefined;
+  mostrar: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -39,9 +41,12 @@ export class CadastrarComponent implements OnInit {
 cadastrar(){
   this.indicacoesService.postIndicacoes(this.indicacoesForm!.value).subscribe(data => {
     this.indicacao = new Indicacoes();
-    alert('CADASTRADO');
-    this._route.navigate(['/']);
+    this.toggle();
   })
+}
+
+toggle(){
+  this.mostrar = !this.mostrar;
 }
 
 bt_cancelar(){
@@ -49,6 +54,10 @@ bt_cancelar(){
 }
 
 bt_Voltar(){
+  this._route.navigate(['/']);
+}
+
+fechar(){
   this._route.navigate(['/']);
 }
 

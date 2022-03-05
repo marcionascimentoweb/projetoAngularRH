@@ -58,6 +58,21 @@
         </div>
         </div>
 
+        <!--MODAL-->
+        <ng-container *ngIf="mostrar">
+             <div class="modal-container flex-item-12">
+                <div class="modal flex">
+                    <img class="bt_confirma" [src]="confirma">
+                    <h3 class="subtitulo flex-item-12">Indicação Salva com sucesso</h3>
+                    <button class="fechar" (click)="fechar()">X</button>
+                    
+                </div>
+            </div>
+        </ng-container>
+
+        
+        
+
 
 
     </article>

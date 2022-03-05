@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
-  constructor() { }
+  public confirma = '../../../assets/img/confirma.png';
+
+  constructor(
+    private route: ActivatedRoute,
+    private _route: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  fechar(){
+    this._route.navigate(['/']);
   }
 
 }

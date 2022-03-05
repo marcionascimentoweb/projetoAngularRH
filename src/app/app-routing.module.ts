@@ -5,12 +5,14 @@ import { DeletarComponent } from './view/deletar/deletar.component';
 import { DetalharComponent } from './view/detalhar/detalhar.component';
 import { HeaderComponent } from './view/header/header.component';
 import { ListagemComponent } from './view/listagem/listagem.component';
+import { ModalComponent } from './view/modal/modal.component';
 
 const routes: Routes = [
   {path: '', component: ListagemComponent},
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'deletar/:id', component: DeletarComponent},
-  {path: 'detalhar/:id', component: DetalharComponent}
+  {path: 'detalhar/:id', component: DetalharComponent},
+  {path: 'modal', component: ModalComponent}
 ];
 
 @NgModule({
